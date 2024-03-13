@@ -6,6 +6,6 @@ for (index = 0; index < offerButtons.length; ++index) {
   offerButtons[index].click();
   await new Promise(r => setTimeout(r, 2000));
   document.querySelectorAll("button[class='cdlx-btn']")[0].click();
-  // Wait 2 seconds to be nice to AMEX servers
+  // Wait 2 seconds to be nice to servers
   await new Promise(r => setTimeout(r, 2000));
 }
