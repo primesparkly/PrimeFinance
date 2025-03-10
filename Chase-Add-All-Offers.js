@@ -3,7 +3,11 @@ javascript: a = () => {
     setTimeout(c, Math.random() * 2000 + 1300);
 };
 c = () => {
-    btns = [...document.querySelectorAll("div[role='button'][data-testid='commerce-tile']")].filter(b => b.childNodes[1].childNodes[0].childNodes[0].type !== 'ico_checkmark_filled');
+    btns = [...document.querySelectorAll("div[role='button'][data-testid='commerce-tile']")]
+  .filter(b => {
+    const child = b.childNodes[1]?.childNodes[0]?.childNodes[0]; // Optional chaining prevents errors
+    return child?.getAttribute && child.getAttribute("data-testid") === 'commerce-tile-button';
+  });
     b = btns.pop();
     if (!b) return console.log('added all!');
     b.childNodes[0].click();
