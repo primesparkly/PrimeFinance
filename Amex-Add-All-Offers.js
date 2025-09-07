@@ -1,5 +1,5 @@
 // Find all the "Add to Card" buttons on the page
-var offerButtons = Array.from(document.getElementsByTagName('button')).filter(btn => btn.title == "Add to Card");
+var offerButtons = Array.from(document.getElementsByTagName('button')).filter(btn => btn.title == "add to list card");
 var index;
 for (index = 0; index < offerButtons.length; ++index) {
   console.log("Clicking offer button");
